@@ -12,10 +12,6 @@
 {
     var timeout = 5000;
     var interval;
-    interval = setInterval(function()
-    {
-        lookForSkip();
-    },timeout);
 
     function lookForSkip()
     {
@@ -25,9 +21,14 @@
         {
             skipButton.click();
             console.log('skip');
-            clearInterval(interval)
+            clearInterval(interval);
         }
     }
+
+    interval = setInterval(function()
+    {
+        lookForSkip();
+    },timeout);
 
     let lastUrl = location.href;
     new MutationObserver(() =>
@@ -42,7 +43,6 @@
 
     function onUrlChange()
     {
-        console.log("url changed");
         interval = setInterval(function(){
             lookForSkip();
         },timeout);
