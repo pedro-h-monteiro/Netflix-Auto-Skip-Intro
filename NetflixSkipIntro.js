@@ -10,41 +10,24 @@
 
 (function()
 {
-    var timeout = 5000;
-    var interval;
+    let lastUrl = location.href;
 
-    function lookForSkip()
+    new MutationObserver(() =>
     {
         var video = document.getElementsByTagName("video")[0];
         var skipButton = document.getElementsByClassName("button-primary watch-video--skip-content-button medium hasLabel ltr-1d02up3")[0];
+
         if (typeof skipButton != "undefined" && video != "undefined")
         {
             skipButton.click();
             console.log('skip');
-            clearInterval(interval);
         }
-    }
 
-    interval = setInterval(function()
-    {
-        lookForSkip();
-    },timeout);
-
-    let lastUrl = location.href;
-    new MutationObserver(() =>
-    {
         const url = location.href;
         if (url !== lastUrl)
         {
             lastUrl = url;
-            onUrlChange();
         }
     }).observe(document, {subtree: true, childList: true});
 
-    function onUrlChange()
-    {
-        interval = setInterval(function(){
-            lookForSkip();
-        },timeout);
-    }
 })();
