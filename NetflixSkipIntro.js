@@ -16,7 +16,7 @@
     function lookForSkip()
     {
         var video = document.getElementsByTagName("video")[0];
-        var skipButton = document.getElementsByClassName("button-primary watch-video--skip-content-button medium hasLabel ltr-13rhcay-buttonCss-buttonCss")[0];
+        var skipButton = document.getElementsByClassName("button-primary watch-video--skip-content-button medium hasLabel ltr-1d02up3")[0];
         if (typeof skipButton != "undefined" && video != "undefined")
         {
             skipButton.click();
