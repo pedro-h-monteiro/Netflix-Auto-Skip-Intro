@@ -10,8 +10,6 @@
 
 (function()
 {
-    let lastUrl = location.href;
-
     new MutationObserver(() =>
     {
         var video = document.getElementsByTagName("video")[0];
@@ -22,12 +20,5 @@
             skipButton.click();
             console.log('skip');
         }
-
-        const url = location.href;
-        if (url !== lastUrl)
-        {
-            lastUrl = url;
-        }
     }).observe(document, {subtree: true, childList: true});
-
 })();
