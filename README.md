@@ -1,5 +1,5 @@
 # Netflix-Auto-Skip-Intro
-A script I made using JavaScript that can be used by extensions such as Tampermonkey , to automatically skip the intro of Netflix TV Shows, for uninterrupted binge watching.
+A script I made using JavaScript that can be used by extensions such as Tampermonkey, to automatically skip the intro of Netflix TV Shows, for uninterrupted binge watching.
 
 # How to use
 
